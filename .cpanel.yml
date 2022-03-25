@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYMENT_PATH=/home/user/public_html
+    - export REPO_PATH=/home/user/repositories/netgeo
+    - /bin/rsync -aP --exclude '.git' --exclude '.well-known' ${REPOPATH}/ ${DEPLOYPATH} --delete-after
